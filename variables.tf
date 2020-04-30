@@ -12,9 +12,3 @@ variable "hosted_zone_name" {
    type        = string
    description = "Hosted zone name"
 }
-
-variable "record_name" {
-   type        = string
-   description = "Complete record name that you would like to add"
-}
-
