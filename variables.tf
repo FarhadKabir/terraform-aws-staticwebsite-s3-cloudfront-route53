@@ -12,3 +12,8 @@ variable "hosted_zone_name" {
    type        = string
    description = "Hosted zone name"
 }
+
+variable "record_name" {
+   type        = string
+   description = "Complete name for record that needs to be added in Route53"
+}
