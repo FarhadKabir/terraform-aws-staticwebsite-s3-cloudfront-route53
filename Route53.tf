@@ -9,8 +9,8 @@ resource "aws_route53_record" "a_record" {
   type    = "A"
 
   alias {
-    name                    = aws_s3_bucket.hosted_zone.website_domain
-    zone_id                 = aws_s3_bucket.hosted_zone.hosted_zone_id
+    name                    = aws_s3_bucket.static_web.website_domain
+    zone_id                 = aws_s3_bucket.static_web.hosted_zone_id
     evaluate_target_health  = false
   }
 }

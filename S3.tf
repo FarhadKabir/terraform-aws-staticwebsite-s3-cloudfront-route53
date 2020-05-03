@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "static_web" {
-  bucket = var.bucket_name
+  bucket = "${var.record_name}.${var.hosted_zone_name}"
   acl = "public-read"
   force_destroy = true
   versioning {
@@ -24,7 +24,7 @@ resource "aws_s3_bucket_policy" "s3_upload_firmware_policy" {
       "Effect":"Allow",
       "Principal": "*",
       "Action":["s3:GetObject"],
-      "Resource":["arn:aws:s3:::${var.bucket_name}/*"]
+      "Resource":["arn:aws:s3:::${var.record_name}.${var.hosted_zone_name}/*"]
       }
   ]
 }
