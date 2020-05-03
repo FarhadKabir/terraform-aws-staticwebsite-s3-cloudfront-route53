@@ -30,3 +30,10 @@ resource "aws_s3_bucket_policy" "s3_upload_firmware_policy" {
 }
 EOF
 }
+
+resource "null_resource" "put_build_files_s3" {
+  provisioner "local-exec" {
+        command = "aws s3 sync ${var.build_folder} s3://${var.record_name}.${var.hosted_zone_name} --delete"
+    }
+  depends_on = [aws_s3_bucket.static_web, aws_s3_bucket_policy.s3_upload_firmware_policy]
+}
