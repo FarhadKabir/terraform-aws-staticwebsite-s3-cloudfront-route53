@@ -2,7 +2,7 @@
 Simple terraform module that can be used to deploy a static react based application to AWS. This module upload the app to S3 and make it available over a Route53 record.
 It also makes use of Cloudfront distribution and attaches SSL certificate for your domain.
 
-##Example Usage
+## Example Usage
 
 
 ```
